@@ -993,7 +993,7 @@
             id="account_report_folder"
             name="Reporting"
             parent="account_account_menu"
-            groups="account.group_account_manager"
+            groups="registro.group_registro_manager"
             sequence="4"/>
 
         <!-- Account Types -->
