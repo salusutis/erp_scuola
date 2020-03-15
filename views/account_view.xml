@@ -117,7 +117,7 @@
               </p>
             </field>
         </record>
-        <menuitem action="action_account_form" id="menu_action_account_form" parent="registro.account_account_menu" groups="account.group_registro_user" sequence="2"/>
+        <menuitem action="action_account_form" id="menu_action_account_form" parent="registro.account_account_menu" groups="registro.group_registro_user" sequence="2"/>
 
         <act_window
             id="act_account_acount_move_line_open_unreconciled"
