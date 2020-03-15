@@ -496,7 +496,7 @@
                                         Define the smallest coinage of the currency used to pay by cash.
                                     </div>
                                     <div>
-                                        <button name="%(account.rounding_list_action)d" icon="fa-arrow-right"
+                                        <button name="%(registro.rounding_list_action)d" icon="fa-arrow-right"
                                                 type="action" string="Cash Roundings" class="btn-link"
                                                 attrs="{'invisible': [('group_cash_rounding', '=', False)]}"/>
                                     </div>
