@@ -24,7 +24,7 @@
             <field name="view_mode">form</field>
             <field name="view_id" ref="account_unreconcile_view"/>
             <field name="target">new</field>
-            <field name="binding_model_id" ref="account.model_account_move_line" />
+            <field name="binding_model_id" ref="registro.model_account_move_line" />
         </record>
 
     </data>
