@@ -262,8 +262,8 @@
                                         </div>
                                     </group>
                                     <group>
-                                        <field name="default_debit_account_id" domain="[('deprecated', '=', False)]" groups="account.group_account_user"/>
-                                        <field name="default_credit_account_id" domain="[('deprecated', '=', False)]" groups="account.group_account_user"/>
+                                        <field name="default_debit_account_id" domain="[('deprecated', '=', False)]" groups="registro.group_account_user"/>
+                                        <field name="default_credit_account_id" domain="[('deprecated', '=', False)]" groups="registro.group_account_user"/>
                                         <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_currency"/>
                                     </group>
                                 </group>
@@ -276,7 +276,7 @@
                                         <field name="bank_id"/>
                                     </group>
                                     <group >
-                                        <field name="bank_statements_source" widget="radio" attrs="{'required': [('type', '=', 'bank')]}"  groups="account.group_account_user"/>
+                                        <field name="bank_statements_source" widget="radio" attrs="{'required': [('type', '=', 'bank')]}"  groups="registro.group_registro_user"/>
                                     </group>
                                 </group>
                             </page>
@@ -395,7 +395,7 @@
                                 </group>
                             </div>
 
-                            <group name="bank_statement" string="Bank Statements" groups="account.group_account_user">
+                            <group name="bank_statement" string="Bank Statements" groups="registro.group_registro_user">
                                 <field name="post_at_bank_rec"/>
                                 <label for="bank_statements_source"/>
                                 <div name="bank_source">
@@ -1166,7 +1166,7 @@
                                         <span class="o_form_label oe_inline" attrs="{'invisible':[('amount_type','=','fixed')]}">%</span>
                                     </div>
                                 </group>
-                                <group attrs="{'invisible':[('amount_type','=', 'group')]}" groups="account.group_account_user">
+                                <group attrs="{'invisible':[('amount_type','=', 'group')]}" groups="registro.group_registro_user">
                                     <field name="account_id"/>
                                     <field name="refund_account_id" attrs="{'required':[('type_tax_use','=','sale'), ('account_id','!=', False)]}"/>
                                 </group>
@@ -1195,9 +1195,9 @@
                                     <field name="price_include" attrs="{'invisible':[('amount_type','=', 'group')]}" />
                                     <field name="include_base_amount" attrs="{'invisible':[('amount_type','=', 'group')]}" />
                                     <field name="hide_tax_exigibility" invisible="1"/>
-                                    <field name="tax_exigibility" widget="radio" attrs="{'invisible':['|', ('amount_type','=', 'group'), ('hide_tax_exigibility', '=', False)]}" groups="account.group_account_user"/>
-                                    <field name="cash_basis_account_id" attrs="{'invisible': [('tax_exigibility', '=', 'on_invoice')], 'required': [('tax_exigibility', '=', 'on_payment')]}" groups="account.group_account_user"/>
-                                    <field name="cash_basis_base_account_id" attrs="{'invisible': [('tax_exigibility', '=', 'on_invoice')]}" groups="account.group_account_user"/>
+                                    <field name="tax_exigibility" widget="radio" attrs="{'invisible':['|', ('amount_type','=', 'group'), ('hide_tax_exigibility', '=', False)]}" groups="registro.group_registro_user"/>
+                                    <field name="cash_basis_account_id" attrs="{'invisible': [('tax_exigibility', '=', 'on_invoice')], 'required': [('tax_exigibility', '=', 'on_payment')]}" groups="registro.group_registro_user"/>
+                                    <field name="cash_basis_base_account_id" attrs="{'invisible': [('tax_exigibility', '=', 'on_invoice')]}" groups="registro.group_registro_user"/>
                                 </group>
                             </group>
                         </page>
@@ -1350,14 +1350,14 @@
             <field name="arch" type="xml">
                 <tree string="Journal Items" create="false">
                     <field name="date"/>
-                    <field name="move_id" required="0" groups="account.group_account_user"/>
+                    <field name="move_id" required="0" groups="registro.group_registro_user"/>
                     <field name="journal_id" options='{"no_open":True}'/>
                     <field name="name"/>
                     <field name="ref"/>
                     <field name="statement_id" invisible="1"/>
                     <field name="partner_id"/>
-                    <field name="account_id" options='{"no_open":True}' domain="[('company_id', '=', company_id)]" groups="account.group_account_user"/>
-                    <field name="analytic_account_id" groups="account.group_account_user"/>
+                    <field name="account_id" options='{"no_open":True}' domain="[('company_id', '=', company_id)]" groups="registro.group_registro_user"/>
+                    <field name="analytic_account_id" groups="registro.group_account_user"/>
                     <field name="analytic_tag_ids" widget="many2many_tags" groups="analytic.group_analytic_tags"/>
                     <field name="reconciled" invisible="1"/>
                     <field name="full_reconcile_id"/>
@@ -1452,7 +1452,7 @@
             <field name="view_id" ref="view_move_line_tree"/>
             <field name="view_mode">tree,pivot,graph,form,kanban</field>
         </record>
-        <menuitem action="action_account_moves_all_a" id="menu_action_account_moves_all" parent="account.menu_finance_entries_accounting_entries" sequence="10" groups="group_account_manager" />
+        <menuitem action="action_account_moves_all_a" id="menu_action_account_moves_all" parent="registro.menu_finance_entries_accounting_entries" sequence="10" groups="group_account_manager" />
         <record id="action_account_moves_all_tree" model="ir.actions.act_window">
             <field name="name">Journal Items</field>
             <field name="res_model">account.move.line</field>
@@ -1559,9 +1559,9 @@
             <field name="arch" type="xml">
                 <form string="Account Entry" duplicate="false">
                     <header>
-                        <button name="action_post" states="draft" string="Post" type="object" class="oe_highlight" groups="account.group_account_invoice"/>
-                        <button name="%(action_view_account_move_reversal)d" states="posted" string="Reverse Entry" type="action" groups="account.group_account_invoice"/>
-                        <button name="action_duplicate" string="Duplicate" type="object" groups="account.group_account_invoice"/>
+                        <button name="action_post" states="draft" string="Post" type="object" class="oe_highlight" groups="registro.group_account_invoice"/>
+                        <button name="%(action_view_account_move_reversal)d" states="posted" string="Reverse Entry" type="action" groups="registro.group_account_invoice"/>
+                        <button name="action_duplicate" string="Duplicate" type="object" groups="registro.group_account_invoice"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -1707,8 +1707,8 @@
         <menuitem
             action="action_move_journal_line"
             id="menu_action_move_journal_line_form"
-            parent="account.menu_finance_entries_accounting_entries"
-            groups="account.group_account_user"
+            parent="registro.menu_finance_entries_accounting_entries"
+            groups="registro.group_registro_user"
             sequence="1"/>
 
         <record id="action_move_line_form" model="ir.actions.act_window">
@@ -2265,9 +2265,9 @@
             </field>
         </record>
 
-        <menuitem id="product_product_menu_sellable" name="Products" action="product_product_action_sellable" parent="account.menu_finance_receivables" sequence="100"/>
+        <menuitem id="product_product_menu_sellable" name="Products" action="product_product_action_sellable" parent="registro.menu_finance_receivables" sequence="100"/>
 
-        <menuitem id="product_product_menu_purchasable" name="Products" action="product_product_action_purchasable" parent="account.menu_finance_payables" sequence="100"/>
+        <menuitem id="product_product_menu_purchasable" name="Products" action="product_product_action_purchasable" parent="registro.menu_finance_payables" sequence="100"/>
 
         <menuitem id="menu_account_supplier" name="Vendors"
             parent="account.menu_finance_payables"
