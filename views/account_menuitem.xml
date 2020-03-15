@@ -5,7 +5,7 @@
         <!-- Top menu item -->
         <menuitem name="Invoicing"
             id="menu_finance"
-            groups="registro.group_account_user,registro.group_account_manager,registro.group_account_invoice"
+            groups="registro.group_registro_user,registro.group_registro_manager,registro.group_account_invoice"
             web_icon="registro,static/description/icon.png"
             sequence="40"/>
 
