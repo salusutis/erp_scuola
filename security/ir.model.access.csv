@@ -62,9 +62,9 @@ access_registro_move_manager,registro.move manager,model_account_move,registro.g
 access_registro_invoice_tax_registroant,registro.invoice.tax registroant,model_account_invoice_tax,registro.group_registro_user,1,0,0,0
 access_registro_analytic_line_invoice,registro.analytic.line invoice,model_account_analytic_line,registro.group_registro_invoice,1,1,1,1
 access_registro_invoice_line_registroant,registro.invoice.line registroant,model_account_invoice_line,registro.group_registro_user,1,0,0,0
-access_registro_registro_invoice,registro.registro invoice,model_account_registro,registro.group_registro_invoice,1,0,0,0
+access_registro_registro_invoice,registro.registro invoice,model_account_account,registro.group_registro_invoice,1,0,0,0
 access_registro_analytic_registroant,registro.analytic.registro registroant,analytic.model_account_analytic_account,registro.group_registro_user,1,1,1,1
-access_registro_registro_type_invoice,registro.registro.type invoice,model_account_registro_type,registro.group_registro_invoice,1,0,0,0
+access_registro_registro_type_invoice,registro.registro.type invoice,model_account_account_type,registro.group_registro_invoice,1,0,0,0
 access_registro_registro_tax,registro.registro.tag,model_account_account_tag,registro.group_registro_user,1,1,1,1
 access_registro_registro_tax_user,registro.registro.tag,model_account_account_tag,registro.group_registro_invoice,1,0,0,0
 access_registro_reconcile_model,registro.reconcile.model,model_account_reconcile_model,registro.group_registro_user,1,1,1,1
