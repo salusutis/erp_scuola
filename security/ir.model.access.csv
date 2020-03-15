@@ -19,7 +19,7 @@ access_registro_registro_template,registro.registro.template,model_account_accou
 access_registro_chart_template,registro.chart.template,model_account_chart_template,registro.group_registro_manager,1,1,1,1
 access_registro_tax_template,registro.tax.template,model_account_tax_template,registro.group_registro_manager,1,1,1,1
 access_registro_bank_statement_group_invoice,registro.bank.statement.group.invoice,model_account_bank_statement,registro.group_account_invoice,1,0,0,0
-access_registro_bank_statement_line_group_invoice,registro.bank.statement.line.group.invoice,model_account_bank_statement_line,registro.group_registro_invoice,1,0,0,0
+access_registro_bank_statement_line_group_invoice,registro.bank.statement.line.group.invoice,model_account_bank_statement_line,registro.group_account_invoice,1,0,0,0
 access_registro_bank_statement,registro.bank.statement,model_account_bank_statement,registro.group_registro_user,1,1,1,1
 access_registro_bank_statement_line,registro.bank.statement.line,model_account_bank_statement_line,registro.group_registro_user,1,1,1,1
 access_registro_analytic_line_manager,registro.analytic.line manager,model_account_analytic_line,registro.group_registro_manager,1,0,0,0
@@ -62,9 +62,9 @@ access_registro_move_manager,registro.move manager,model_account_move,registro.g
 access_registro_invoice_tax_registroant,registro.invoice.tax registroant,model_account_invoice_tax,registro.group_registro_user,1,0,0,0
 access_registro_analytic_line_invoice,registro.analytic.line invoice,model_account_analytic_line,registro.group_account_invoice,1,1,1,1
 access_registro_invoice_line_registroant,registro.invoice.line registroant,model_account_invoice_line,registro.group_registro_user,1,0,0,0
-access_registro_registro_invoice,registro.registro invoice,model_account_registro,registro.group_account_invoice,1,0,0,0
+access_registro_registro_invoice,registro.registro invoice,model_account_account,registro.group_account_invoice,1,0,0,0
 access_registro_analytic_registroant,registro.analytic.registro registroant,analytic.model_account_analytic_account,registro.group_registro_user,1,1,1,1
-access_registro_registro_type_invoice,registro.registro.type invoice,model_account_registro_type,registro.group_account_invoice,1,0,0,0
+access_registro_registro_type_invoice,registro.registro.type invoice,model_account_account_type,registro.group_account_invoice,1,0,0,0
 access_registro_registro_tax,registro.registro.tag,model_account_account_tag,registro.group_registro_user,1,1,1,1
 access_registro_registro_tax_user,registro.registro.tag,model_account_account_tag,registro.group_account_invoice,1,0,0,0
 access_registro_reconcile_model,registro.reconcile.model,model_account_reconcile_model,registro.group_registro_user,1,1,1,1
