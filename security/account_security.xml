@@ -90,14 +90,14 @@
 
     <record id="registro_move_comp_rule" model="ir.rule">
         <field name="name">registro Entry</field>
-        <field name="model_id" ref="model_registro_move"/>
+        <field name="model_id" ref="model_account_move"/>
         <field name="global" eval="True"/>
         <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
     </record>
 
     <record id="registro_move_line_comp_rule" model="ir.rule">
         <field name="name">Entry lines</field>
-        <field name="model_id" ref="model_registro_move_line"/>
+        <field name="model_id" ref="model_account_move_line"/>
         <field name="global" eval="True"/>
         <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
     </record>
