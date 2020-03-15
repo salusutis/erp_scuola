@@ -35,7 +35,7 @@
                                                 <field name="chart_template_id" widget="selection"/>
                                             </div>
                                             <div>
-                                                <button name="%(account.open_account_charts_modules)d" icon="fa-arrow-right" type="action" string="Install More Packages" class="btn-link"/>
+                                                <button name="%(registro.open_account_charts_modules)d" icon="fa-arrow-right" type="action" string="Install More Packages" class="btn-link"/>
                                             </div>
                                         </div>
                                     </div>
