@@ -27,7 +27,7 @@
 
     <record id="group_registro_manager" model="res.groups">
         <field name="name">Billing Manager</field>
-        <field name="category_id" ref="base.module_category_registroing_and_finance"/>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
         <field name="implied_ids" eval="[(4, ref('group_registro_invoice'))]"/>
     </record>
 
