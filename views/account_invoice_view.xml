@@ -268,7 +268,7 @@
                         <button name="%(action_account_invoice_payment)d" type="action" states="open" string="Register Payment" groups="registro.group_account_invoice" class="oe_highlight"/>
                         <button name="%(action_account_invoice_refund)d" type='action' string='Ask for a Credit Note' groups="registro.group_account_invoice" attrs="{'invisible': ['|',('type', 'in', ['in_refund','out_refund']),('state','not in',('open','in_payment','paid'))]}"/>
                         <button name="action_invoice_draft" states="cancel" string="Set to Draft" type="object" groups="registro.group_account_invoice"/>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,open,paid" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,paid" />
                 </header>
                 <div groups="registro.group_registro_invoice" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
                     You have <bold><a class="alert-link" href="#outstanding" role="button">outstanding debits</a></bold> for this supplier. You can allocate them to mark this bill as paid.
