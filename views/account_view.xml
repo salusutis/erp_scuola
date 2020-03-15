@@ -1392,7 +1392,7 @@
             context="{'search_default_account_id': [active_id]}"
             res_model="account.move.line"
             src_model="account.account"
-            view_id="account.view_move_line_tax_audit_tree"/>
+            view_id="registro.view_move_line_tax_audit_tree"/>
 
         <record id="account_move_line_graph_date" model="ir.ui.view">
             <field name="name">account.move.line.graph</field>
