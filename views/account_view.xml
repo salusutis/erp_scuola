@@ -1452,7 +1452,7 @@
             <field name="view_id" ref="view_move_line_tree"/>
             <field name="view_mode">tree,pivot,graph,form,kanban</field>
         </record>
-        <menuitem action="action_account_moves_all_a" id="menu_action_account_moves_all" parent="registro.menu_finance_entries_accounting_entries" sequence="10" groups="group_account_manager" />
+        <menuitem action="action_account_moves_all_a" id="menu_action_account_moves_all" parent="registro.menu_finance_entries_accounting_entries" sequence="10" groups="group_registro_manager" />
         <record id="action_account_moves_all_tree" model="ir.actions.act_window">
             <field name="name">Journal Items</field>
             <field name="res_model">account.move.line</field>
