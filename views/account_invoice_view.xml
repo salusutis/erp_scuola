@@ -270,7 +270,7 @@
                         <button name="action_invoice_draft" states="cancel" string="Set to Draft" type="object" groups="registro.group_account_invoice"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,paid" />
                 </header>
-                <div  class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                <div groups="registro.group_account_invoice" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
                     You have <bold><a class="alert-link" href="#outstanding" role="button">outstanding debits</a></bold> for this supplier. You can allocate them to mark this bill as paid.
                 </div>
                 <field name="has_outstanding" invisible="1"/>
