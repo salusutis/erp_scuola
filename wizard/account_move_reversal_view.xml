@@ -26,7 +26,7 @@
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_account_move_reversal"/>
             <field name="target">new</field>
-            <field name="binding_model_id" ref="account.model_account_move" />
+            <field name="binding_model_id" ref="registro.model_account_move" />
         </record>
     </data>
 </odoo>
