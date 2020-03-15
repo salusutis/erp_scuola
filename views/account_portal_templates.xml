@@ -139,7 +139,7 @@
         </xpath>
     </template>
 
-    <template id="portal_invoice_chatter" name="Allow Comments &amp; History" inherit_id="account.portal_invoice_page">
+    <template id="portal_invoice_chatter" name="Allow Comments &amp; History" inherit_id="registro.portal_invoice_page">
         <xpath expr="//div[@id='invoice_content']//div[hasclass('o_portal_html_view')]" position="after">
             <div class="modal fade" id="invoice_chatter" role="dialog">
                 <div class="modal-dialog">
