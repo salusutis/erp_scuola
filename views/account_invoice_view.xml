@@ -349,7 +349,7 @@
                                                 <field name="tax_id" invisible="1"/>
                                                 <field name="sequence" invisible="1"/>
                                                 <field name="manual" invisible="1"/>
-                                                <field name="account_id" groups="ergistro.group_registro_user"/>
+                                                <field name="account_id" groups="registro.group_registro_user"/>
                                                 <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id)]" groups="analytic.group_analytic_accounting"/>
                                                 <field name="analytic_tag_ids" groups="analytic.group_analytic_tags" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                                 <field name="amount"/>
