@@ -2208,7 +2208,7 @@
         </record>
 
         <menuitem id="menu_account_customer" name="Customers"
-            parent="account.menu_finance_receivables"
+            parent="registro.menu_finance_receivables"
             action="base.action_partner_customer_form" sequence="110"/>
 
         <record id="product_product_view_tree" model="ir.ui.view">
@@ -2270,7 +2270,7 @@
         <menuitem id="product_product_menu_purchasable" name="Products" action="product_product_action_purchasable" parent="registro.menu_finance_payables" sequence="100"/>
 
         <menuitem id="menu_account_supplier" name="Vendors"
-            parent="account.menu_finance_payables"
+            parent="registro.menu_finance_payables"
             action="base.action_partner_supplier_form" sequence="200"/>
 
         <!-- Manual reconciliation -->
@@ -2279,7 +2279,7 @@
             <field name="tag">manual_reconciliation_view</field>
         </record>
 
-        <menuitem id="menu_action_manual_reconciliation" parent="account.menu_finance_entries_actions" action="action_manual_reconciliation" sequence="25"/>
+        <menuitem id="menu_action_manual_reconciliation" parent="registro.menu_finance_entries_actions" action="action_manual_reconciliation" sequence="25"/>
 
         <record id="view_account_group_form" model="ir.ui.view">
             <field name="name">account.group.form</field>
