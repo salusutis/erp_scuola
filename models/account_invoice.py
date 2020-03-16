@@ -1031,9 +1031,9 @@ class AccountInvoice(models.Model):
     def get_formview_id(self, access_uid=None):
         """ Update form view id of action to open the invoice """
         if self.type in ('in_invoice', 'in_refund'):
-            return self.env.ref('account.invoice_supplier_form').id
+            return self.env.ref('registro.invoice_supplier_form').id
         else:
-            return self.env.ref('account.invoice_form').id
+            return self.env.ref('registro.invoice_form').id
 
     def _prepare_tax_line_vals(self, line, tax):
         """ Prepare values to create an account.invoice.tax line
