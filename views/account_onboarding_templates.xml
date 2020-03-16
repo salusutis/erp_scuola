@@ -77,21 +77,21 @@
             <t t-set="text_completed">Congratulations! You are all set.</t>
 
             <t t-call="base.onboarding_company_step" name="company_step" />
-            <t t-call="account.onboarding_invoice_layout_step" name="invoice_layout_step" />
-            <t t-call="account.onboarding_sample_invoice_step" name="sample_invoice_step" />
+            <t t-call="registro.onboarding_invoice_layout_step" name="invoice_layout_step" />
+            <t t-call="registro.onboarding_sample_invoice_step" name="sample_invoice_step" />
         </t>
     </template>
     <template id="account_dashboard_onboarding_panel" name="account.dashboard.onboarding.panel">
         <t t-call="base.onboarding_container">
             <t t-set="classes" t-value="'o_onboarding_orange'"/>
-            <t t-set="bg_image" t-value="'/account/static/src/img/account_dashboard_onboarding_bg.jpg'"/>
+            <t t-set="bg_image" t-value="'/registro/static/src/img/account_dashboard_onboarding_bg.jpg'"/>
             <t t-set="close_method" t-value="'action_close_account_dashboard_onboarding'"/>
             <t t-set="close_model" t-value="'res.company'"/>
 
-            <t t-call="account.dashboard_onboarding_company_step" name="company_step" />
-            <t t-call="account.onboarding_bank_account_step" name="bank_account_step" />
-            <t t-call="account.onboarding_fiscal_year_step" name="fiscal_year_step" />
-            <t t-call="account.onboarding_chart_of_account_step" name="chart_of_account_step" />
+            <t t-call="registro.dashboard_onboarding_company_step" name="company_step" />
+            <t t-call="registro.onboarding_bank_account_step" name="bank_account_step" />
+            <t t-call="registro.onboarding_fiscal_year_step" name="fiscal_year_step" />
+            <t t-call="registro.onboarding_chart_of_account_step" name="chart_of_account_step" />
         </t>
     </template>
     <!-- INVOICE FORM -->
