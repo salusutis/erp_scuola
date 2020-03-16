@@ -87,10 +87,10 @@
             target="new"
             view_type="form"
             context="{
-                'default_template_id': ref('account.email_template_edi_invoice'),
+                'default_template_id': ref('registro.email_template_edi_invoice'),
                 'mark_invoice_as_sent': True,
             }"
-            groups="account.group_account_invoice"/>
+            groups="registro.group_account_invoice"/>
 
     </data>
 
