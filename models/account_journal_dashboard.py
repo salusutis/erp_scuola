@@ -282,7 +282,7 @@ class account_journal(models.Model):
             ctx.update({'journal_type': self.type, 'default_type': 'in_invoice', 'type': 'in_invoice', 'default_journal_id': self.id})
             if ctx.get('refund'):
                 ctx.update({'default_type': 'in_refund', 'type': 'in_refund'})
-            view_id = self.env.ref('account.invoice_supplier_form').id
+            view_id = self.env.ref('registro.invoice_supplier_form').id
         else:
             ctx.update({'default_journal_id': self.id, 'view_no_maturity': True})
             view_id = self.env.ref('account.view_move_form').id
