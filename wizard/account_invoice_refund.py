@@ -117,7 +117,7 @@ class AccountInvoiceRefund(models.TransientModel):
             if mode == 'modify':
                 # When refund method is `modify` then it will directly open the new draft bill/invoice in form view
                 if inv_refund.type == 'in_invoice':
-                    view_ref = self.env.ref('account.invoice_supplier_form')
+                    view_ref = self.env.ref('registro.invoice_supplier_form')
                 else:
                     view_ref = self.env.ref('account.invoice_form')
                 form_view = [(view_ref.id, 'form')]
