@@ -593,7 +593,7 @@ class account_payment(models.Model):
             'domain': [('id', 'in', [x.id for x in self.reconciled_invoice_ids])],
         }
         if self.partner_type == 'supplier':
-            action['views'] = [(self.env.ref('account.invoice_supplier_tree').id, 'tree'), (self.env.ref('account.invoice_supplier_form').id, 'form')]
+            action['views'] = [(self.env.ref('registro.invoice_supplier_tree').id, 'tree'), (self.env.ref('registro.invoice_supplier_form').id, 'form')]
             action['context'] = {
                 'journal_type': 'purchase',
                 'type': 'in_invoice',
