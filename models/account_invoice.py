@@ -627,7 +627,7 @@ class AccountInvoice(models.Model):
                 return view.id
 
         context = self._context
-        supplier_form_view_id = get_view_id('invoice_supplier_form', 'registro.invoice.supplier.form').id
+        supplier_form_view_id = get_view_id('invoice_supplier_form', 'registro.invoice.supplier.form').id or False
         if context.get('active_model') == 'res.partner' and context.get('active_ids'):
             partner = self.env['res.partner'].browse(context['active_ids'])[0]
             if not view_type:
