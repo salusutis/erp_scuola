@@ -619,7 +619,7 @@ class AccountInvoice(models.Model):
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
         def get_view_id(xid, name):
             try:
-                return self.env.ref('account.' + xid)
+                return self.env.ref('registro.' + xid)
             except ValueError:
                 view = self.env['ir.ui.view'].search([('name', '=', name)], limit=1)
                 if not view:
@@ -627,7 +627,7 @@ class AccountInvoice(models.Model):
                 return view.id
 
         context = self._context
-        supplier_form_view_id = get_view_id('invoice_supplier_form', 'account.invoice.supplier.form').id or False
+        supplier_form_view_id = get_view_id('invoice_supplier_form', 'registro.invoice.supplier.form').id or False
         if context.get('active_model') == 'res.partner' and context.get('active_ids'):
             partner = self.env['res.partner'].browse(context['active_ids'])[0]
             if not view_type:
