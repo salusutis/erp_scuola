@@ -26,7 +26,7 @@ class TestAccountCustomerInvoice(AccountTestUsers):
         self.journalrec = self.env['account.journal'].search([('type', '=', 'sale')])[0]
         self.partner3 = self.env.ref('base.res_partner_3')
         account_user_type = self.env.ref('account.data_account_type_receivable')
-        self.ova = self.env['account.account'].search([('user_type_id', '=', self.env.ref('account.data_account_type_current_assets').id)], limit=1)
+        self.ova = self.env['account.account'].search([('user_type_id', '=', self.env.ref('registro.data_account_type_current_assets').id)], limit=1)
 
         #only adviser can create an account
         self.account_rec1_id = self.account_model.sudo(self.account_manager.id).create(dict(
