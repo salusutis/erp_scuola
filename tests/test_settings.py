@@ -20,20 +20,20 @@ class TestSettings(AccountingTestCase):
         config.show_line_subtotals_tax_selection = "tax_excluded"
         config._onchange_sale_tax()
         config.execute()
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_excluded'), True)
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_included'), False)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_excluded'), True)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_included'), False)
 
         config.show_line_subtotals_tax_selection = "tax_included"
         config._onchange_sale_tax()
         config.execute()
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_excluded'), False)
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_included'), True)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_excluded'), False)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_included'), True)
 
         config.show_line_subtotals_tax_selection = "tax_excluded"
         config._onchange_sale_tax()
         config.execute()
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_excluded'), True)
-        self.assertEqual(self.env.user.has_group('account.group_show_line_subtotals_tax_included'), False)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_excluded'), True)
+        self.assertEqual(self.env.user.has_group('registro.group_show_line_subtotals_tax_included'), False)
 
     def test_switch_taxB2B_taxB2C_multicompany(self):
         """
