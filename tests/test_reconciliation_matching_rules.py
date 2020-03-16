@@ -11,7 +11,7 @@ class TestReconciliationMatchingRules(AccountingTestCase):
         self_ctx = self.env['account.invoice'].with_context(type=type)
         journal_id = self_ctx._default_journal().id
         self_ctx = self_ctx.with_context(journal_id=journal_id)
-        view = type in ('in_invoice', 'in_refund') and 'account.invoice_supplier_form' or 'account.invoice_form'
+        view = type in ('in_invoice', 'in_refund') and 'registro.invoice_supplier_form' or 'registro.invoice_form'
         with Form(self_ctx, view=view) as invoice_form:
             invoice_form.partner_id = partner
             with invoice_form.invoice_line_ids.new() as invoice_line_form:
