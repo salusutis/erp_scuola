@@ -16,7 +16,7 @@ class ImportInvoiceImportWizard(models.TransientModel):
     @api.multi
     def _create_invoice_from_file(self, attachment):
         self = self.with_context(default_journal_id= self.journal_id.id)
-        invoice_form = Form(self.env['account.invoice'], view='account.invoice_supplier_form')
+        invoice_form = Form(self.env['account.invoice'], view='registro.invoice_supplier_form')
         invoice = invoice_form.save()
         attachment.write({'res_model': 'account.invoice', 'res_id': invoice.id})
         invoice.message_post(attachment_ids=[attachment.id])
