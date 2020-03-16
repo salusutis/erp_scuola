@@ -37,21 +37,21 @@ class ResConfigSettings(models.TransientModel):
     # We need both of them to coexist so we can take advantage of automatic group assignation.
     group_show_line_subtotals_tax_excluded = fields.Boolean(
         "Show line subtotals without taxes (B2B)",
-        implied_group='account.group_show_line_subtotals_tax_excluded',
+        implied_group='registro.group_show_line_subtotals_tax_excluded',
         group='base.group_portal,base.group_user,base.group_public')
     group_show_line_subtotals_tax_included = fields.Boolean(
         "Show line subtotals with taxes (B2C)",
-        implied_group='account.group_show_line_subtotals_tax_included',
+        implied_group='registro.group_show_line_subtotals_tax_included',
         group='base.group_portal,base.group_user,base.group_public')
     group_products_in_bills = fields.Boolean(string="Use products in vendor bills",
-        implied_group='account.group_products_in_bills',
+        implied_group='registro.group_products_in_bills',
         group='base.group_user',
         help="Disable this option to use a simplified versions of vendor bills, where products are hidden.")
     show_line_subtotals_tax_selection = fields.Selection([
         ('tax_excluded', 'Tax-Excluded'),
         ('tax_included', 'Tax-Included')], string="Line Subtotals Tax Display",
         required=True, default='tax_excluded',
-        config_parameter='account.show_line_subtotals_tax_selection')
+        config_parameter='registro.show_line_subtotals_tax_selection')
     module_account_asset = fields.Boolean(string='Assets Management')
     module_account_deferred_revenue = fields.Boolean(string="Revenue Recognition")
     module_account_budget = fields.Boolean(string='Budget Management')
