@@ -150,7 +150,7 @@ class AccountChartTemplate(models.Model):
                 break
         else:
             raise UserError(_('Cannot generate an unused account code.'))
-        current_assets_type = self.env.ref('account.data_account_type_current_assets', raise_if_not_found=False)
+        current_assets_type = self.env.ref('registro.data_account_type_current_assets', raise_if_not_found=False)
         return {
             'name': _('Liquidity Transfer'),
             'code': new_code,
