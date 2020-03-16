@@ -29,7 +29,7 @@ class ResConfigSettings(models.TransientModel):
     group_analytic_accounting = fields.Boolean(string='Analytic Accounting',
         implied_group='analytic.group_analytic_accounting')
     group_analytic_tags = fields.Boolean(string='Analytic Tags', implied_group='analytic.group_analytic_tags')
-    group_warning_account = fields.Boolean(string="Warnings in Invoices", implied_group='registro.group_warning_account')
+    #group_warning_account = fields.Boolean(string="Warnings in Invoices", implied_group='registro.group_warning_account')
     group_cash_rounding = fields.Boolean(string="Cash Rounding", implied_group='registro.group_cash_rounding')
     group_fiscal_year = fields.Boolean(string='Fiscal Years', implied_group='registro.group_fiscal_year')
     # group_show_line_subtotals_tax_excluded and group_show_line_subtotals_tax_included are opposite,
