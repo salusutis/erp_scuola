@@ -230,14 +230,14 @@ class TestAccountCustomerInvoice(AccountTestUsers):
         tax_account = self.env['account.account'].create({
             'name': 'TAX',
             'code': 'TAX',
-            'user_type_id': self.env.ref('account.data_account_type_current_assets').id,
+            'user_type_id': self.env.ref('registro.data_account_type_current_assets').id,
             'company_id': company.id,
         })
 
         tax_refund_account = self.env['account.account'].create({
             'name': 'TAX_REFUND',
             'code': 'TAX_R',
-            'user_type_id': self.env.ref('account.data_account_type_current_assets').id,
+            'user_type_id': self.env.ref('registro.data_account_type_current_assets').id,
             'company_id': company.id,
         })
 
