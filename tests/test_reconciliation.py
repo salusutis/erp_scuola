@@ -69,13 +69,13 @@ class TestReconciliation(AccountingTestCase):
         self.tax_final_account = self.env['account.account'].create({
             'name': 'TAX_TO_DEDUCT',
             'code': 'TDEDUCT',
-            'user_type_id': self.env.ref('account.data_account_type_current_assets').id,
+            'user_type_id': self.env.ref('registro.data_account_type_current_assets').id,
             'company_id': company.id,
         })
         self.tax_base_amount_account = self.env['account.account'].create({
             'name': 'TAX_BASE',
             'code': 'TBASE',
-            'user_type_id': self.env.ref('account.data_account_type_current_assets').id,
+            'user_type_id': self.env.ref('registro.data_account_type_current_assets').id,
             'company_id': company.id,
         })
 
