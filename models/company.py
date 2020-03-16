@@ -287,7 +287,7 @@ Best Regards,'''))
     @api.model
     def setting_init_bank_account_action(self):
         """ Called by the 'Bank Accounts' button of the setup bar."""
-        view_id = self.env.ref('account.setup_bank_account_wizard').id
+        view_id = self.env.ref('registro.setup_bank_account_wizard').id
         return {'type': 'ir.actions.act_window',
                 'name': _('Create a Bank Account'),
                 'res_model': 'account.setup.bank.manual.config',
@@ -303,7 +303,7 @@ Best Regards,'''))
         company = self.env.user.company_id
         company.create_op_move_if_non_existant()
         new_wizard = self.env['account.financial.year.op'].create({'company_id': company.id})
-        view_id = self.env.ref('account.setup_financial_year_opening_form').id
+        view_id = self.env.ref('registro.setup_financial_year_opening_form').id
 
         return {
             'type': 'ir.actions.act_window',
@@ -323,22 +323,22 @@ Best Regards,'''))
 
         # If an opening move has already been posted, we open the tree view showing all the accounts
         if company.opening_move_posted():
-            return 'account.action_account_form'
+            return 'registro.action_account_form'
 
         # Otherwise, we create the opening move
         company.create_op_move_if_non_existant()
 
         # Then, we open will open a custom tree view allowing to edit opening balances of the account
-        view_id = self.env.ref('account.init_accounts_tree').id
+        view_id = self.env.ref('registro.init_accounts_tree').id
         # Hide the current year earnings account as it is automatically computed
-        domain = [('user_type_id', '!=', self.env.ref('account.data_unaffected_earnings').id), ('company_id','=', company.id)]
+        domain = [('user_type_id', '!=', self.env.ref('registro.data_unaffected_earnings').id), ('company_id','=', company.id)]
         return {
             'type': 'ir.actions.act_window',
             'name': _('Chart of Accounts'),
             'res_model': 'account.account',
             'view_mode': 'tree',
             'limit': 99999999,
-            'search_view_id': self.env.ref('account.view_account_search').id,
+            'search_view_id': self.env.ref('registro.view_account_search').id,
             'views': [[view_id, 'list']],
             'domain': domain,
         }
@@ -376,7 +376,7 @@ Best Regards,'''))
         """ Returns the unaffected earnings account for this company, creating one
         if none has yet been defined.
         """
-        unaffected_earnings_type = self.env.ref("account.data_unaffected_earnings")
+        unaffected_earnings_type = self.env.ref("registro.data_unaffected_earnings")
         account = self.env['account.account'].search([('company_id', '=', self.id),
                                                       ('user_type_id', '=', unaffected_earnings_type.id)])
         if account:
@@ -452,14 +452,14 @@ Best Regards,'''))
     @api.model
     def action_open_account_onboarding_invoice_layout(self):
         """ Onboarding step for the invoice layout. """
-        action = self.env.ref('account.action_open_account_onboarding_invoice_layout').read()[0]
+        action = self.env.ref('registro.action_open_account_onboarding_invoice_layout').read()[0]
         action['res_id'] = self.env.user.company_id.id
         return action
 
     @api.model
     def action_open_account_onboarding_sale_tax(self):
         """ Onboarding step for the invoice layout. """
-        action = self.env.ref('account.action_open_account_onboarding_sale_tax').read()[0]
+        action = self.env.ref('registro.action_open_account_onboarding_sale_tax').read()[0]
         action['res_id'] = self.env.user.company_id.id
         return action
 
@@ -481,7 +481,7 @@ Best Regards,'''))
 
             journal = self.env['account.journal'].search([('company_id', '=', company_id)], limit=1)
             if len(journal) == 0:
-                action = self.env.ref('account.action_account_journal_form')
+                action = self.env.ref('registro.action_account_journal_form')
                 msg = _("We cannot find any journal for this company. You should create one."
                         "\nPlease go to Configuration > Journals.")
                 raise RedirectWarning(msg, action.id, _("Go to the journal configuration"))
@@ -513,8 +513,8 @@ Best Regards,'''))
         """ Onboarding step for sending a sample invoice. Open a window to compose an email,
             with the edi_invoice_template message loaded by default. """
         sample_invoice = self._get_sample_invoice()
-        template = self.env.ref('account.email_template_edi_invoice', False)
-        action = self.env.ref('account.action_open_account_onboarding_sample_invoice').read()[0]
+        template = self.env.ref('registro.email_template_edi_invoice', False)
+        action = self.env.ref('registro.action_open_account_onboarding_sample_invoice').read()[0]
         action['context'] = {
             'default_res_id': sample_invoice.id,
             'default_use_template': bool(template),
