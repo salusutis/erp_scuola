@@ -22,7 +22,7 @@ class OnboardingController(http.Controller):
             })
         }
 
-    @http.route('/account/account_dashboard_onboarding', auth='user', type='json')
+    @http.route('/accounttt2/account_dashboard_onboarding', auth='user', type='json')
     def account_dashboard_onboarding(self):
         """ Returns the `banner` for the account dashboard onboarding panel.
             It can be empty if the user has closed it or if he doesn't have
