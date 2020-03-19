@@ -377,7 +377,21 @@ class account_journal(models.Model):
             'type': invoice_type
         })
 
-        return {}
+        [action] = self.env.ref('registro.%s' % action_name).read()
+        if not self.env.context.get('use_domain'):
+            ctx['search_default_journal_id'] = self.id
+        action['context'] = ctx
+        action['domain'] = self._context.get('use_domain', [])
+        account_invoice_filter = self.env.ref('registro.view_account_invoice_filter', False)
+        if action_name in ['action_invoice_tree1', 'action_vendor_bill_template']:
+            action['search_view_id'] = account_invoice_filter and account_invoice_filter.id or False
+        if action_name in ['action_bank_statement_tree', 'action_view_bank_statement_tree']:
+            action['views'] = False
+            action['view_id'] = False
+        if self.type == 'purchase':
+            new_help = self.env['account.invoice'].with_context(ctx).complete_empty_list_help()
+            action.update({'help': (action.get('help') or '') + new_help})
+        return action
 
     @api.multi
     def open_spend_money(self):
