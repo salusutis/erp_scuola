@@ -398,10 +398,10 @@ class AccountJournal(models.Model):
     _order = 'sequence, type, code'
 
     def _default_inbound_payment_methods(self):
-        return self.env.ref('account.account_payment_method_manual_in')
+        return self.env.ref('registro.account_payment_method_manual_in')
 
     def _default_outbound_payment_methods(self):
-        return self.env.ref('account.account_payment_method_manual_out')
+        return self.env.ref('registro.account_payment_method_manual_out')
 
     def __get_bank_statements_available_sources(self):
         return [('undefined', _('Undefined Yet'))]
