@@ -557,7 +557,7 @@ class TestReconciliationExec(TestReconciliation):
         invoice = self.create_invoice(type='out_invoice', invoice_amount=80, currency_id=self.currency_usd_id)
         # register payment on invoice
         payment = self.env['account.payment'].create({'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait_id,
             'amount': 80,
@@ -778,7 +778,7 @@ class TestReconciliationExec(TestReconciliation):
         inv2 = self.create_invoice(invoice_amount=20, currency_id=self.currency_usd_id)
         payment = self.env['account.payment'].create({
             'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait_id,
             'amount': 100,
@@ -831,7 +831,7 @@ class TestReconciliationExec(TestReconciliation):
         inv = self.create_invoice(invoice_amount=111, currency_id=self.currency_usd_id)
         payment = self.env['account.payment'].create({
             'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait_id,
             'amount': 111,
@@ -979,7 +979,7 @@ class TestReconciliationExec(TestReconciliation):
         inv = self.create_invoice(invoice_amount=111, currency_id=self.currency_usd_id)
         payment = self.env['account.payment'].create({
             'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait_id,
             'amount': 111,
@@ -1148,7 +1148,7 @@ class TestReconciliationExec(TestReconciliation):
         payment = self.env['account.payment'].create(
             {'payment_type': 'inbound',
              'payment_method_id': self.env.ref(
-                 'account.account_payment_method_manual_in').id,
+                 'registro.account_payment_method_manual_in').id,
              'partner_type': 'customer',
              'partner_id': self.partner_agrolait_id,
              'amount': 50,
@@ -1275,7 +1275,7 @@ class TestReconciliationExec(TestReconciliation):
 
         payment = self.env['account.payment'].create({
             'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait_id,
             'amount': 25,
