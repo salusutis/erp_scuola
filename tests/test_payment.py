@@ -24,8 +24,8 @@ class TestPayment(AccountingTestCase):
         company = self.env.ref('base.main_company')
         self.cr.execute("UPDATE res_company SET currency_id = %s WHERE id = %s", [self.currency_eur_id, company.id])
         self.product = self.env.ref("product.product_product_4")
-        self.payment_method_manual_in = self.env.ref("account.account_payment_method_manual_in")
-        self.payment_method_manual_out = self.env.ref("account.account_payment_method_manual_out")
+        self.payment_method_manual_in = self.env.ref("registro.account_payment_method_manual_in")
+        self.payment_method_manual_out = self.env.ref("registro.account_payment_method_manual_out")
 
         self.account_receivable = self.env['account.account'].search([('user_type_id', '=', self.env.ref('account.data_account_type_receivable').id)], limit=1)
         self.account_payable = self.env['account.account'].search([('user_type_id', '=', self.env.ref('account.data_account_type_payable').id)], limit=1)
@@ -362,7 +362,7 @@ class TestPayment(AccountingTestCase):
         invoice = self.create_invoice(amount=25, type='out_invoice', currency_id=self.currency_eur_id, partner=self.partner_agrolait.id)
         # register payment on invoice
         payment = self.payment_model.create({'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait.id,
             'amount': 25,
@@ -389,7 +389,7 @@ class TestPayment(AccountingTestCase):
         invoice = self.create_invoice(amount=25, type='in_invoice', currency_id=self.currency_eur_id, partner=self.partner_agrolait.id)
         # register payment on invoice
         payment = self.payment_model.create({'payment_type': 'outbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'supplier',
             'partner_id': self.partner_agrolait.id,
             'amount': 25,
@@ -417,7 +417,7 @@ class TestPayment(AccountingTestCase):
         invoice = self.create_invoice(amount=100, type='out_refund', currency_id=self.currency_eur_id, partner=self.partner_agrolait.id)
         # register payment on invoice
         payment = self.payment_model.create({'payment_type': 'outbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait.id,
             'amount': 90,
@@ -458,7 +458,7 @@ class TestPayment(AccountingTestCase):
         ])
         # register payment on invoice
         payment = self.payment_model.create({'payment_type': 'outbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'supplier',
             'partner_id': self.partner_agrolait.id,
             'amount': 5325,
@@ -510,7 +510,7 @@ class TestPayment(AccountingTestCase):
         ])
         # register payment on invoice
         payment = self.payment_model.create({'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait.id,
             'amount': 267,
@@ -543,7 +543,7 @@ class TestPayment(AccountingTestCase):
             'post_at_bank_rec': True,
         })
         payment_one = self.payment_model.create({'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait.id,
             'amount': 42,
@@ -554,7 +554,7 @@ class TestPayment(AccountingTestCase):
             })
         payment_one.post()
         payment_two = self.payment_model.create({'payment_type': 'inbound',
-            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id,
+            'payment_method_id': self.env.ref('registro.account_payment_method_manual_in').id,
             'partner_type': 'customer',
             'partner_id': self.partner_agrolait.id,
             'amount': 11,
