@@ -1574,7 +1574,7 @@ class AccountInvoice(models.Model):
     def _prepare_payment_vals(self, pay_journal, pay_amount=None, date=None, writeoff_acc=None, communication=None):
         payment_type = self.type in ('out_invoice', 'in_refund') and 'inbound' or 'outbound'
         if payment_type == 'inbound':
-            payment_method = self.env.ref('account.account_payment_method_manual_in')
+            payment_method = self.env.ref('registro.account_payment_method_manual_in')
             journal_payment_methods = pay_journal.inbound_payment_method_ids
         else:
             payment_method = self.env.ref('account.account_payment_method_manual_out')
