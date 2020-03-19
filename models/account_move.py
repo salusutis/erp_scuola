@@ -483,7 +483,7 @@ class AccountMove(models.Model):
     @api.multi
     def action_duplicate(self):
         self.ensure_one()
-        action = self.env.ref('account.action_move_journal_line').read()[0]
+        action = self.env.ref('registro.action_move_journal_line').read()[0]
         action['context'] = dict(self.env.context)
         action['context']['form_view_initial_mode'] = 'edit'
         action['context']['view_no_maturity'] = False
@@ -508,7 +508,7 @@ class AccountMove(models.Model):
 
     @api.multi
     def action_view_reverse_entry(self):
-        action = self.env.ref('account.action_move_journal_line').read()[0]
+        action = self.env.ref('registro.action_move_journal_line').read()[0]
         action['views'] = [(self.env.ref('account.view_move_form').id, 'form')]
         action['res_id'] = self.reverse_entry_id.id
         return action
