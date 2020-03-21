@@ -63,6 +63,7 @@ Tentativo di realizzare un registro elettronico sulle ceneri del modulo di conta
         'views/appointments.xml',
         'views/patients.xml',
         'views/web_timeline.xml',
+        'views/templates.xml',
         'data/sequence.xml',
     ],
     'demo': [
