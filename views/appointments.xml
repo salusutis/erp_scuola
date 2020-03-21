@@ -16,11 +16,10 @@
         </field>
     </record>
 
-     <!--
     <menuitem id="hospital_root" name="Hospital" sequence="0" web_icon="om_hospital, static/description/icon.png" />
-    <menuitem id="hospital_patient" name="Patients" parent="hospital_root" action="registro.action_patient" />
+    <menuitem id="hospital_patient" name="Patients" parent="hospital_root" action="action_patient" />
     <menuitem id="patient_appointment" name="Appointments" parent="hospital_root" action="action_appointment" />
-     -->
+
     <!-- Tree view of the appointment model -->
     <record id="patient_tre_view" model="ir.ui.view">
       <field name="name">hospital.appointment.tree</field>

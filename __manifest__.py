@@ -1,83 +1,36 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name' : 'Registro',
-    'version' : '1.0',
-    'summary': 'Registro elettronico',
-    'sequence': 15,
+    'name': "Hospital Management",
+
+    'summary': """
+        This is a Hospital Management Software developed by Real Haque""",
+
     'description': """
-    Registro elettronico
-====================
-Tentativo di realizzare un registro elettronico sulle ceneri del modulo di contabilita'.
+        Long description of module's purpose
     """,
-    'category': 'Scuola',
-    'website': 'https://www.odoo.com/page/billing',
-    'images' : ['images/accounts.jpeg','images/bank_statement.jpeg','images/cash_register.jpeg','images/chart_of_accounts.jpeg','images/customer_invoice.jpeg','images/journal_entries.jpeg'],
-    'depends' : ['sale',],
+
+    'author': "RealDooo",
+    'website': "http://www.realdooo.com",
+
+    # Categories can be used to filter modules in modules listing
+    # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
+    # for the full list
+    'category': 'Uncategorized',
+    'version': '0.1',
+
+    # any module necessary for this one to work correctly
+    'depends': ['base', 'mail','sale'],
+
+    # always loaded
     'data': [
-        'security/account_security.xml',
         'security/ir.model.access.csv',
-        'data/data_account_type.xml',
-        'data/account_data.xml',
-        'data/digest_data.xml',
-        'views/account_menuitem.xml',
-        'views/account_payment_view.xml',
-        'wizard/account_unreconcile_view.xml',
-        'wizard/account_move_reversal_view.xml',
-        'views/account_view.xml',
-        'views/account_report.xml',
-        'data/mail_template_data.xml',
-        'wizard/account_invoice_refund_view.xml',
-        'wizard/account_validate_move_view.xml',
-        'wizard/account_invoice_state_view.xml',
-        'wizard/pos_box.xml',
-        'views/account_end_fy.xml',
-        'views/account_invoice_view.xml',
-        'views/partner_view.xml',
-        'views/product_view.xml',
-        'views/account_analytic_view.xml',
-        'views/account_tip_data.xml',
-        'views/account.xml',
-        'views/report_invoice.xml',
-        'report/account_invoice_report_view.xml',
-        'views/account_cash_rounding_view.xml',
-        'wizard/account_report_common_view.xml',
-        'views/report_journal.xml',
-        'views/tax_adjustments.xml',
-        'wizard/wizard_tax_adjustments_view.xml',
-        'views/res_config_settings_views.xml',
-        'views/account_invoice_import_wizard_view.xml',
-        'views/account_journal_dashboard_view.xml',
-        'views/account_portal_templates.xml',
-        'views/report_payment_receipt_templates.xml',
-        'data/payment_receipt_data.xml',
-        'wizard/setup_wizards_view.xml',
-        'views/account_onboarding_templates.xml',
-        'data/service_cron_reverse.xml',
-        'views/account_fiscal_year_view.xml',
-        'views/account_incoterms_view.xml',
-        'data/account_incoterms_data.xml',
-        'views/res_company_view.xml',
-        'views/digest_views.xml',
-        'wizard/account_invoice_send_views.xml',
         'views/appointments.xml',
         'views/patients.xml',
-        'views/web_timeline.xml',
-        'views/templates.xml',
         'data/sequence.xml',
+        
     ],
+    # only loaded in demonstration mode
     'demo': [
-        'demo/account_demo.xml',
+        'demo/demo.xml',
     ],
-    'qweb': [
-        "static/src/xml/account_reconciliation.xml",
-        "static/src/xml/account_payment.xml",
-        "static/src/xml/account_report_backend.xml",
-        "static/src/xml/bills_tree_upload_views.xml",
-        'static/src/xml/web_timeline.xml',
-    ],
-    'installable': True,
-    'application': True,
-    'auto_install': False,
-    'post_init_hook': '_auto_install_l10n',
 }

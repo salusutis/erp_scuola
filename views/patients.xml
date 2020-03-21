@@ -34,7 +34,7 @@
 
     <menuitem id="hospital_root" name="Hospital" sequence="0" web_icon="om_hospital, static/description/icon.png" />
     <menuitem id="hospital_patient" name="Patients" parent="hospital_root" action="action_patient" />
-    <menuitem id="patient_appointment" name="Appointments" parent="hospital_root" action="registro.action_appointment" />
+    <menuitem id="patient_appointment" name="Appointments" parent="hospital_root" action="action_appointment" />
 
     <record id="sale_order_inherit" model="ir.ui.view">
       <field name="name">sale.order.inherit</field>
