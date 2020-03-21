@@ -13,7 +13,7 @@ Tentativo di realizzare un registro elettronico sulle ceneri del modulo di conta
     'category': 'Scuola',
     'website': 'https://www.odoo.com/page/billing',
     'images' : ['images/accounts.jpeg','images/bank_statement.jpeg','images/cash_register.jpeg','images/chart_of_accounts.jpeg','images/customer_invoice.jpeg','images/journal_entries.jpeg'],
-    'depends' : ['base_setup', 'product', 'analytic', 'portal', 'digest', 'base', 'mail', 'sale', 'web'],
+    'depends' : [],
     'data': [
         'security/account_security.xml',
         'security/ir.model.access.csv',
