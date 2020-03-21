@@ -13,7 +13,7 @@ Tentativo di realizzare un registro elettronico sulle ceneri del modulo di conta
     'category': 'Scuola',
     'website': 'https://www.odoo.com/page/billing',
     'images' : ['images/accounts.jpeg','images/bank_statement.jpeg','images/cash_register.jpeg','images/chart_of_accounts.jpeg','images/customer_invoice.jpeg','images/journal_entries.jpeg'],
-    'depends' : ['base_setup', 'product', 'analytic', 'portal', 'digest'],
+    'depends' : ['base_setup', 'product', 'analytic', 'portal', 'digest', 'base', 'mail', 'sale', 'web'],
     'data': [
         'security/account_security.xml',
         'security/ir.model.access.csv',
@@ -60,6 +60,10 @@ Tentativo di realizzare un registro elettronico sulle ceneri del modulo di conta
         'views/res_company_view.xml',
         'views/digest_views.xml',
         'wizard/account_invoice_send_views.xml',
+        'views/appointments.xml',
+        'views/patients.xml',
+        'views/web_timeline.xml',
+        'data/sequence.xml',
     ],
     'demo': [
         'demo/account_demo.xml',
@@ -69,6 +73,7 @@ Tentativo di realizzare un registro elettronico sulle ceneri del modulo di conta
         "static/src/xml/account_payment.xml",
         "static/src/xml/account_report_backend.xml",
         "static/src/xml/bills_tree_upload_views.xml",
+        'static/src/xml/web_timeline.xml',
     ],
     'installable': True,
     'application': True,

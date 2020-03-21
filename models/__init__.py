@@ -20,3 +20,6 @@ from . import account_incoterms
 from . import digest
 from . import account_invoice_import_wizard
 from . import res_users
+#
+from . import patients
+from . import appointments

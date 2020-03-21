@@ -84,3 +84,4 @@ access_registro_fiscal_year_user,registro.fiscal.year.user,model_account_fiscal_
 access_registro_fiscal_year_manager,registro.fiscal.year.manager,model_account_fiscal_year,registro.group_registro_manager,1,1,1,1
 access_registro_incoterms_all,registro.incoterms all,model_account_incoterms,,1,0,0,0
 access_registro_incoterms_manager,registro.incoterms manager,model_account_incoterms,registro.group_registro_manager,1,1,1,1
+access_hospital_patient,access.hospital.patient,model_hospital_patient,,1,1,1,1
