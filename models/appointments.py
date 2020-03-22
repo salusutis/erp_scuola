@@ -15,7 +15,7 @@ class hospital_appointment(models.Model):
     def create(self, vals):
         if vals.get('apmt_seq', _('New')) == _('New'):
             vals['apmt_seq'] = self.env['ir.sequence'].next_by_code('hospital.appointment.sequence') or _('New')
-        result =  super(hospital_appointment,self).create(vals)
+        result = super(hospital_appointment, self).create(vals)
         return result
 
     def _get_default_note(self):
