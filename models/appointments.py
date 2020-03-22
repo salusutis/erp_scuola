@@ -21,8 +21,7 @@ class hospital_appointment(models.Model):
     def _get_default_note(self):
         return "Default Note"
 
-    apmt_seq = fields.Char(string = 'Appointment ID', required=True, copy=False, readonly=True,index = True, 
-                        default=lambda self: _('New'))
+    apmt_seq = fields.Char(string = 'Appointment ID', required=True, copy=False, readonly=True,index = True, default=lambda self: _('New'))
     patient_id = fields.Many2one('hospital.patient', string='Patient', required=True) 
     patient_age = fields.Integer(string='Age', related = 'patient_id.patient_age')
     notes = fields.Text(string='Notes', default=_get_default_note)
