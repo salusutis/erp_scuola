@@ -9,7 +9,7 @@
     'maintainer': 'Odoo Mates',
     'website': 'odoomates.com',
     'live_test_url': 'https://www.youtube.com/watch?v=BDepk0LhVuI&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=1',
-    'depends': ['sale', 'mail', 'board'],
+    'depends': ['sale', 'mail', 'board','report_xlsx',],
     'demo': [],
     'data': [
         'security/security.xml',
