@@ -27,16 +27,15 @@
       </field>
     </record>
 
-
-    <record id="action_view_timeline" model="ir.actions.act_window">
+     <record id="project.action_view_task" model="ir.actions.act_window">
         <field name="view_mode">kanban,tree,form,calendar,gantt,timeline,graph</field>
-    </record>
+     </record>
 
 
     <menuitem id="hospital_root" name="Hospital" sequence="0" web_icon="om_hospital, static/description/icon.png" />
     <menuitem id="hospital_patient" name="Patients" parent="hospital_root" action="action_patient" />
     <menuitem id="patient_appointment" name="Appointments" parent="hospital_root" action="action_appointment" />
-    <menuitem id="patient_timeline" name="Timeline" parent="hospital_root" action="action_view_timeline" />
+    <menuitem id="patient_timeline" name="Timeline" parent="hospital_root" action="project.action_view_task" />
 
 
     <record id="sale_order_inherit" model="ir.ui.view">
