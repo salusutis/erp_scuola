@@ -26,7 +26,7 @@ class HospitalSettings(models.TransientModel):
         #print("product_ids", type(literal_eval(product_ids)))
         res.update(
             note=notes,
-            product_ids=[(6, 0, literal_eval(product_ids))],
+            #product_ids=[(6, 0, literal_eval(product_ids))],
         )
         return res
 
