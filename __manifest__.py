@@ -10,6 +10,9 @@
     'website': 'odoomates.com',
     'live_test_url': 'https://www.youtube.com/watch?v=BDepk0LhVuI&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=1',
     'depends': ['sale', 'mail', 'board'],
+    'qweb': [
+        'static/src/xml/web_timeline.xml',
+    ],
     'demo': [],
     'data': [
         'security/security.xml',
@@ -32,6 +35,7 @@
         'reports/sale_report_inherit.xml',
         'reports/appointment.xml',
         'data/mail_template.xml',
+        'views/web_timeline.xml',
     ],
     'images': ['static/description/banner.png'],
     'installable': True,
