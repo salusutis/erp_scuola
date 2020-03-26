@@ -9,14 +9,10 @@
     'maintainer': 'Odoo Mates',
     'website': 'odoomates.com',
     'live_test_url': 'https://www.youtube.com/watch?v=BDepk0LhVuI&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=1',
-<<<<<<< HEAD
-    'depends': ['sale', 'mail', 'board','report_xlsx',],
-=======
     'depends': ['sale', 'mail', 'board'],
     'qweb': [
         'static/src/xml/web_timeline.xml',
     ],
->>>>>>> dda9aaaeb78eec8c602041e0c67bc193c0d43e14
     'demo': [],
     'data': [
         'security/security.xml',
