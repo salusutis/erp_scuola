@@ -156,7 +156,8 @@
 
 
     <record id="om_hospital.action_view_task" model="ir.actions.act_window">
-            <field name="view_mode">kanban,tree,form,calendar,gantt,graph</field>
+            <field name="view_type">timeline</field>
+            <field name="view_mode">timeline,tree,form</field>
     </record>
 
     <!--How To Define Search View in Odoo12-->
