@@ -129,35 +129,7 @@
         </field>
     </record>
 
-    <record id="view_task_timeline" model="ir.ui.view">
-        <field name="name">hospital.patient.timeline</field>
-        <field name="model">hospital.patient</field>
-        <field name="type">timeline</field>
-        <field name="arch" type="xml">
-            <timeline date_start="date_start"
-                      date_stop="date_end"
-                      string="Pazienti"
-                      default_group_by="user_id"
-                      event_open_popup="true"
-                      zoomKey="ctrlKey"
-                      colors="#ec7063:user_id == false;#2ecb71:kanban_state=='done';"
-                      dependency_arrow="task_dependency_ids">
-                <field name="user_id"/>
-                <templates>
-                    <div t-name="timeline-item">
-                        <div t-esc="record.display_name"/>
-                        Assigned to:
-                        <span t-esc="record.user_id[1]"/>
-                    </div>
-                </templates>
-            </timeline>
-        </field>
-     </record>
 
-
-    <record id="om_hospital.action_view_task" model="ir.actions.act_window">
-            <field name="view_mode">timeline,tree,form</field>
-    </record>
 
     <!--How To Define Search View in Odoo12-->
     <!--  https://www.youtube.com/watch?v=hKigPT7GF7E&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=10  -->
