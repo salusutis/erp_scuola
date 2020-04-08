@@ -155,6 +155,10 @@
      </record>
 
 
+    <record id="om_hospital.action_view_task" model="ir.actions.act_window">
+            <field name="view_mode">timeline</field>
+    </record>
+
     <!--How To Define Search View in Odoo12-->
     <!--  https://www.youtube.com/watch?v=hKigPT7GF7E&list=PLqRRLx0cl0hoJhjFWkFYowveq2Zn55dhM&index=10  -->
 
